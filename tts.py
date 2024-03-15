@@ -4,7 +4,7 @@ import time
 
 language = 'ru'
 model_id = 'ru_v3'
-sample_rate = 24000
+sample_rate = 48000
 speaker = 'aidar'  # aidar, baya, kseniya, xenia, eugene, random
 put_accent = True
 put_yo = True

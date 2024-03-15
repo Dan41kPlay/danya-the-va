@@ -2,7 +2,6 @@ from datetime import datetime
 from random import choice
 
 from fuzzywuzzy import fuzz
-from num2t4ru import num2text
 from langchain.schema import HumanMessage, SystemMessage, BaseMessage
 from langchain.chat_models.gigachat import GigaChat
 
@@ -55,13 +54,12 @@ def execute_cmd(cmd: str) -> str:
             return 'Всегда пожалуйста!'
         case 'current_time':
             now = datetime.now()
-            return f'Сейчас {num2text(now.hour)} {'ноль ' if now.minute < 10 else ''}{num2text(now.minute)}.'
+            return f'Сейчас {now.hour} {now.minute:0>2}.'
         case 'joke':
             return choice(config.JOKES)
         case _:
             if not cmd:
                 return 'Что?'
-            cmd = ' '.join(num2text(int(word)) if word.isdigit() else word for word in cmd.split(' '))
             messages.append(HumanMessage(content=cmd))
             res = chat(messages)
             messages.append(res)

@@ -3,6 +3,8 @@ from ctypes import windll
 from threading import Thread
 
 from PyQt5 import QtWidgets as qtws, QtGui as qtg, QtCore as qtc
+from num2t4ru import num2text
+
 
 import config
 from stt import va_listen
@@ -48,7 +50,8 @@ class DanyaTheVA(qtws.QWidget):
                     print(answer)
                     self.executed_command.setText(answer)
                     try:
-                        va_speak(answer)
+                        va_speak(' '.join(num2text(int(word)) if word.isdigit()
+                                          else word for word in answer.split(' ')))
                     except ValueError:
                         pass
                     if answer == 'Пока! До скорой встречи...':
