@@ -1,0 +1,7 @@
+sounddevice~=0.4.6
+vosk~=0.3.45
+ujson~=5.9.0
+torch~=2.3.0.dev20240314+cu121
+PyQt5~=5.15.10
+fuzzywuzzy~=0.18.0
+num2t4ru~=2.0.0
