@@ -21,7 +21,7 @@ class DanyaTheVA(qtws.QWidget):
         self.setGeometry((windll.user32.GetSystemMetrics(0) - self.w) // 2,
                          (windll.user32.GetSystemMetrics(1) - self.h) // 2, self.w, self.h)
         self.setWindowTitle(f'{config.VA_NAME} v{config.VA_VER}')
-        self.setWindowIcon(qtg.QIcon('atom.png'))
+        self.setWindowIcon(qtg.QIcon('icon.png'))
         self.setFixedSize(self.size())
         self.listen_btn = qtws.QPushButton('Слушать', self)
         self.listen_btn.setFont(qtg.QFont(self.font_, 20, 50))
