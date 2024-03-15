@@ -1,6 +1,6 @@
 VA_NAME = 'Danya the VA'
 
-VA_VER = '1.0'
+VA_VER = '2.0'
 
 VA_ALIAS = ('да не', 'далее')
 
